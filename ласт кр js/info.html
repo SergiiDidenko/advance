@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="mainHeader">
+        <div class="editor">
+          <button class="button1 border notactiv" id="openAdminlog" disabled>
+            <img src="img/code-slash.svg" />
+          </button>
+        </div>
+        <div class="boxFonts">
+          <input
+            type="button"
+            value="B"
+            id="bold"
+            onclick="bold()"
+            class="button borderLeft"
+          />
+          <input
+            type="button"
+            value="І"
+            id="italics"
+            onclick="italics()"
+            class="button"
+          />
+          <input
+            type="button"
+            value="U"
+            id="damn"
+            onclick="damn()"
+            class="button"
+          />
+          <input
+            type="button"
+            value="S"
+            id="strikeout"
+            onclick="strikeout()"
+            class="button borderRight"
+          />
+        </div>
+        <div class="boxAlignment">
+          <button
+            class="button borderLeft"
+            id="blockquote-left"
+            onclick="blockquote_left()"
+          >
+            <img src="img/blockquote-left.svg" />
+          </button>
+
+          <button class="button" id="text-center" onclick="text_center()">
+            <img src="img/text-center.svg" />
+          </button>
+          <button
+            class="button borderRight"
+            id="blockquote-right"
+            onclick="blockquote_right()"
+          >
+            <img src="img/blockquote-right.svg" />
+          </button>
+        </div>
+        <div class="boxStyle">
+          <input
+            type="button"
+            value="А"
+            id="fontF"
+            onclick="fontF()"
+            class="button borderLeft"
+          />
+          <input type="button" value="Т" id="fontS" class="button" />
+          <button class="button fontColor">
+            <img src="img/palette.svg" />
+          </button>
+          <button class="button borderRight" id="fontb" onclick="fontbb()">
+            <img src="img/card-image.svg" />
+          </button>
+        </div>
+        <div class="boxAdmine">
+          <button class="button border bt"></button>
+        </div>
+      </div>
+
+      <div class="mainHeader2 hide">
+        <button class="borderLeft save btmain2">1</button>
+        <button class="table btmain2">2</button>
+        <button class="ol btmain2">3</button>
+        <button class="borderRight ul btmain2">4</button>
+      </div>
+    </header>
+    <div class="boxFontFamile hide">
+      <p class="Arial">Arial</p>
+      <p class="Georgia">Georgia</p>
+      <p class="Impact">Impact</p>
+      <p class="Tahoma">Tahoma</p>
+      <p class="TimesNewRoman">Times New Roman</p>
+      <p class="Verdana">Verdana</p>
+    </div>
+    <div class="boxFontSize hide">
+      <p class="tw">12px</p>
+      <p class="fot">14px</p>
+      <p class="sixt">16px</p>
+      <p class="elft">18px</p>
+      <p class="twlt">20px</p>
+      <p class="tf">25px</p>
+      <p class="tht">30px</p>
+    </div>
+    <div class="dark hide"></div>
+    <div class="boxColortext hide">
+      <div class="topBoxColor">
+        <p id="topBoxColortext">choose text Color</p>
+        <p class="time">&times;</p>
+      </div>
+      <div class="bottonBoxColor">
+        <div class="boxColor num1" onclick="color('rgb(141, 251, 255)')"></div>
+        <div class="boxColor num2" onclick="color('rgb(0, 89, 255)')"></div>
+        <div class="boxColor num3" onclick="color('rgb(101, 95, 160)')"></div>
+        <div class="boxColor num4" onclick="color('rgb(7, 41, 52)')"></div>
+        <div class="boxColor num5" onclick="color('rgb(38, 0, 255)')"></div>
+        <div class="boxColor num6" onclick="color('rgb(179, 0, 255)')"></div>
+        <div class="boxColor num7" onclick="color('rgb(140, 95, 160)')"></div>
+        <div class="boxColor num8" onclick="color('rgb(160, 95, 129)')"></div>
+        <div class="boxColor num9" onclick="color('rgb(255, 0, 21)')"></div>
+        <div class="boxColor num10" onclick="color('rgb(214, 91, 91)')"></div>
+        <div class="boxColor num11" onclick="color('rgb(255, 157, 0)')"></div>
+        <div class="boxColor num12" onclick="color('rgb(239, 255, 18);')"></div>
+        <div class="boxColor num13" onclick="color('rgb(38, 225, 0)')"></div>
+        <div class="boxColor num14" onclick="color('rgb(255, 0, 255)')"></div>
+        <div class="boxColor num15" onclick="color('rgb(255, 0, 43)')"></div>
+        <div class="boxColor num16" onclick="color('rgb(0, 83, 31)')"></div>
+        <div class="boxColor num17" onclick="color('rgb(160, 95, 153)')"></div>
+        <div class="boxColor num18" onclick="color('rgb(190, 2, 242)')"></div>
+        <div
+          class="boxColor num19"
+          onclick="color('rgba(86, 24, 92, 0.822)')"
+        ></div>
+        <div class="boxColor num20" onclick="color('rgb(0, 0, 0)')"></div>
+        <div class="boxColor num21" onclick="color('rgb(185, 178, 178)')"></div>
+      </div>
+    </div>
+    <div class="boxAdmin hide">
+      <p class="texstBoxAgmin">Sing in</p>
+
+      <input type="text" class="inputAdmin login" />
+      <input type="password" class="inputAdmin pass" />
+      <button class="btAdmin">Sing in</button>
+    </div>
+    <div class="boxhelp2 hide">
+      <div class="exboxAdmin">
+        <input type="button" class="Cancel" onclick="Cancel()" value="Cancel" />
+        <input
+          type="button"
+          class="SingOut"
+          onclick="SingOut()"
+          value="Sing out"
+        />
+      </div>
+    </div>
+
+    <!-- -------------------------------------------------------- -->
+    <div class="hide helpHide">
+      <form class="formTable" name="formCreateTable">
+        <div class="titel blockSpan">
+          <p class="texsttitel">Crerate table</p>
+          <p class="ex">&times;</p>
+        </div>
+        <label for="countTr">
+          <div class="blockSpan">
+            <p class="texstSpan">Count TR:</p>
+            <input type="text" class="count" name="countTr" />
+          </div>
+        </label>
+        <label for="countTd">
+          <div class="blockSpan">
+            <p class="texstSpan">Count TD:</p>
+
+            <input type="text" class="count" name="countTd" />
+          </div>
+        </label>
+
+        <label for="widthTD">
+          <div class="blockSpan">
+            <p class="texstSpan">width TD::</p>
+
+            <input type="text" class="count" name="widthTD" />
+          </div>
+        </label>
+
+        <label for="HeightTD">
+          <div class="blockSpan">
+            <p class="texstSpan">Height TD::</p>
+
+            <input type="text" class="count" name="HeightTD" />
+          </div>
+        </label>
+
+        <div class="blockSpan">
+          <p class="texstSpan">Wight of border:</p>
+
+          <input type="text" name="Wightofborde" class="hlp count" />
+        </div>
+        <!-- -------- -->
+
+        <div class="blockSpan helpDispl">
+          <div class="hell">
+            <span class="sp">Type of border</span>
+            <select class="tpBorder inputsel" name="tpBorder">
+              <option value="solid">solid</option>
+              <option value="double">double</option>
+              <option value="groove">groove</option>
+              <option value="outset">outset</option>
+            </select>
+          </div>
+
+          <div class="hell">
+            <p class="sp">color of border</p>
+            <select class="colorBorder inputsel" name="colorBorder">
+              <option value="red">red</option>
+              <option value="aqua">aqua</option>
+              <option value="blueviolet">blueviolet</option>
+              <option value="darksalmon">darksalmon</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="butttabl1" type="button" onclick="rem()">Reset</button>
+        <button class="butttabl2" type="button" onclick="createTable()">
+          Create tabl
+        </button>
+      </form>
+    </div>
+
+    <!-- -------------------------------------------------------- -->
+
+    <div class="hide2 hide">
+      <form name="formCreateList" class="formCreateList hidden">
+        <div class="box">
+          <p id="createoi">create oi</p>
+          <p class="time2">&times;</p>
+        </div>
+
+        <label for="countLi">
+          <div class="blockcountLi">
+            <p class="texstcountLi">Count li:</p>
+
+            <input type="text" class="countLi" name="countLi" />
+          </div>
+
+          <div class="blockcountLi">
+            <p class="texstcountLi">type of marks</p>
+
+            <select class="typeofmark" name="typeofmarks">
+              <option value="disc">disc</option>
+              <option value="circle">circle</option>
+              <option value="square">square</option>
+              <option value="decimal">decimal</option>
+            </select>
+          </div>
+        </label>
+        <input type="button" value="reset" onclick="reset2()" class="btpain" />
+        <input
+          type="button"
+          value="create"
+          onclick="createList()"
+          class="btpain1"
+        />
+      </form>
+    </div>
+    <!-- -------------------------------------------------------- -->
+    <div class="hlp1 hide">
+      <div class="boximg">
+        <div class="imd1" onclick="bgimg('bimd1')"></div>
+        <div class="imd2" onclick="bgimg('bimd2')" ></div>
+      </div>
+    </div>
+
+    <!-- -------------------------------------------------------- -->
+    <div class="main-Texst-box">
+      <p>
+        Lorem ipsum sem eget, tempus donec leo molestie gravida at molestie nam
+        sagittis, elementum massa congue: mattis sapien.
+      </p>
+      <p>
+        Lorem ipsum sem eget, tempus donec leo molestie gravida at molestie nam
+        sagittis, elementum massa congue: mattis sapien.
+      </p>
+      <p>
+        Lorem ipsum sem eget, tempus donec leo molestie gravida at molestie nam
+        sagittis, elementum massa congue: mattis sapien.
+      </p>
+      <p>
+        Lorem ipsum sem eget, tempus donec leo molestie gravida at molestie nam
+        sagittis, elementum massa congue: mattis sapien.
+      </p>
+      <p>
+        Lorem ipsum sem eget, tempus donec leo molestie gravida at molestie nam
+        sagittis, elementum massa congue: mattis sapien.
+      </p>
+      <p>
+        Lorem ipsum sem eget, tempus donec leo molestie gravida at molestie nam
+        sagittis, elementum massa congue: mattis sapien.
+      </p>
+      <p>
+        Lorem ipsum sem eget, tempus donec leo molestie gravida at molestie nam
+        sagittis, elementum massa congue: mattis sapien.
+      </p>
+    </div>
+    <textarea class="texstar hide" cols="160" rows="62"></textarea>
+    <script src="script.js"></script>
+  </body>
+</html>
